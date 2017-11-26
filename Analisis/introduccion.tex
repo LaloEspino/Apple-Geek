@@ -1,135 +1,70 @@
-\label{sec:introduccion}
+\section{Objetivo del documento}\label{sec:objetivo}
 
+El proyecto tiene como propósito desarrollar una aplicación donde los alumnos de la \textbf{Escuela Superior de Cómputo}\footnote{En adelante ESCOM} puedan visualizar la información personal de los docentes, así como los horarios y cubículos asignados a ellos en el transcurso del semestre.\\
 
-El presente documento corresponde al tercer componente, con clave C3-DT, denominado {\bf Documento Técnico Componente 3}. Dicho documento fue establecido en el convenio celebrado entre la {\bf Escuela Libre de Derecho}\footnote{En adelante ELD} y el {\bf Instituto Politécnico Nacional}\footnote{En adelante IPN.} cuyo objeto es ``Desarrollar el Sistema de Administración Escolar Versión 2.0''.
+El presente documento tiene como objetivo mostrar en detalle los términos, reglas de negocio, casos de uso, interfaces y mensajes correspondientes a cada uno de los módulos propuestos para el sistema.
 
+\section{Alcance}\label{sec:alcance}
 
+El presente documento está conformado por los diferentes casos de uso de los diferentes módulos con los que cuenta el sistema, los cuales se describen en el capitulo \ref{chp:modeloComportamiento}. También se incluye el glosario de términos, reglas de negocio, modelo comportamiento y de interacción que complementan la especificación de los casos de uso del sistema.
 
-\section{Objetivo del documento}
-\label{gls:Objetivo del documento}
+\section{Estructura del documento}\label{sec:estructuraDocumento}
 
-El proyecto tiene como propósito desarrollar un sistema de administración escolar que permita a la ELD, a través de la Internet, tener el control de los procesos internos que realiza para sus diferentes módulos.
-
-El presente documento tiene como objetivo mostrar en detalle los términos, reglas de negocio, casos de uso, interfaces y mensajes correspondientes a cada uno de los módulos propuestos para el sistema, que deberán ser revisados y aprobados por ambas partes antes de iniciar su desarrollo.
-
-\section{Alcance y acuerdo de conformidad}
-\label{gls:Alcance y acuerdo de conformidad}
-
-
-El presente documento está conformado por los diferentes casos de uso de los diferentes módulos con los que cuenta el sistema, los cuales se describen en el capitulo \ref{chp:modeloComportamiento}. También se incluye el glosario de términos, reglas de negocio, modelo comportamiento y de interacción que complementan la especificación de los casos de uso del sistema.\\
-
-El IPN y la ELD asumirán los costos en tiempo y alcance del sistema que se deriven de cambios a los artefactos ya aprobados, estos cambios deberán solicitarse por escrito y rubricados por el responsable del proyecto correspondiente y serán evaluados por el IPN para verificar si proceden o están dentro del alcance del proyecto.
-
-\section{Estructura del documento}
-\label{gls:Estructura del documento}
 El contenido del documento se encuentra estructurado de la siguiente forma:\\
 
-\begin{Citemize}
-	
-	\item El capítulo \ref{chp:introduccion} describe la introducción del documento de casos de uso.
-	
-	\item El capítulo \ref{chp:glosarioTerminos} describe el glosario de términos técnicos del negocio.
-	
-	\item El capítulo \ref{chp:modeloNegocios}  muestra el modelo de negocio, el cual esta conformado por el modelo de información y reglas de negocio.
-	
-	\item El capítulo \ref{chp:modeloComportamiento} describe los módulos que conforman el sistema y se detallan los perfiles de usuario participantes.\label{chp:modeloComportamiento}
-	
-	\item El capítulo \ref{chp:GCalendario} describe los casos de uso que conforman el módulo : Generación de calendario escolar.
-	
-	\item El capítulo \ref{chp:GConvocatoria} describe los casos de uso que conforman el módulo : Generación de convocatoria de ingreso.
-	
-	\item El capítulo \ref{chp:CUsuario} describe los casos de uso que conforman el módulo : Cuenta de usuario.
-	
-	\item El capítulo \ref{chp:RAspirantes} describe los casos de uso que conforman el módulo : Registro de Aspirantes.
-	
-%	\item El capítulo \ref{chp:PExamenes} describe los casos de uso que conforman el módulo : Pago de exámenes
-	
-%	\item El capítulo \ref{chp:REscuelas} describe los casos de uso que conforman el módulo : Registro de escuelas.
-	
-%	\item El capítulo \ref{chp:EPiscometrico} describe los casos de uso que conforman el módulo : Examen psicométrico.
-	
-	\item El capítulo \ref{chp:PEntrevistas} describe los casos de uso que conforman el módulo : Planificación de entrevistas.
-	
-	\item El capítulo \ref{chp:SAspirantes} describe los casos de uso que conforman el módulo : Selección de aspirantes.
-	
-%	\item El capítulo \ref{chp:PEstudio} describe los casos de uso que conforman el módulo : Planes de estudios.
-	
-%	\item El capítulo \ref{chp:Equivalencias} describe los casos de uso que conforman el módulo : Equivalencias.
-	
-%	\item El capítulo \ref{chp:GGrupos} describe los casos de uso que conforman el módulo : Gestión de grupos.
-	
-%	\item El capítulo \ref{chp:modeloComportamientoGestionSalones} describe los casos de uso que conforman el módulo : Gestión de salones.
-	
-%	\item El capítulo \ref{chp:modeloComportamientoGestionProfesores} describe los casos de uso que conforman el módulo : Gestión de profesores.
-	
-	\item El capítulo \ref{chp:modeloInteraccionUsuario} describe el modelo de interacción con el usuario.
-	
-%	\item El capítulo \ref{chp:Inscripcion} describe los casos de uso que conforman el módulo : Inscripción.
-
+	\begin{Citemize}
 		
-	
-\end{Citemize}
+		\item El capítulo \ref{chp:introduccion} describe la introducción del documento de casos de uso.
+		
+		\item El capítulo \ref{chp:glosarioTerminos} describe el glosario de términos técnicos del negocio.
+		
+		\item El capítulo \ref{chp:modeloNegocios}  muestra el modelo de negocio, el cual esta conformado por el modelo de información y reglas de negocio.
+		
+		\item El capítulo \ref{chp:modeloComportamiento} describe los módulos que conforman el sistema y se detallan los perfiles de usuario participantes.
+		
+		\item El capítulo \ref{chp:CProfesores} describe los casos de uso que conforman el módulo: Consulta de Profesores.
+		
+		\item El capítulo \ref{chp:Horarios} describe los casos de uso que conforman el módulo: Horarios.
+		
+		\item El capítulo \ref{chp:modeloInteraccionUsuario} describe el modelo de interacción con el usuario.
+		
+	\end{Citemize}
 
+\section{Notación utilizada en el documento}\label{sec:notacion}
 
+A continuación se presentan las abreviaciones utilizadas a lo largo del presente documento y su significado.
 
+\subsection{Abreviaciones}\label{ssec:abreviaciones}
 
-\section{Notación utilizada en el documento}
-\label{gls:Notacion utilizada en el documento}
-
-A continuación se presentan las abreviaciones utilizadas a lo largo del presente documento y su significado.\\
-\subsection{Abreviaciones}
 	\begin{description}
-	%\BRterm{nom:anp}{ANP:} Área Natural Protegida.
+
 	\BRterm{nom:bpmn}{BPMN:} Notación para el Modelado del Proceso de Negocio, BPMN por sus siglas en inglés.
-	\BRterm{nom:cdt}{CDT:} Coordinación de Desarrollo Tecnológico.
-	\BRterm{nom:eld}{ELD:} Escuela Libre de Derecho.
+
 	\BRterm{nom:escom}{ESCOM:} Escuela Superior de Cómputo. 
+	
 	\BRterm{nom:ipn}{IPN:} Instituto Politécnico Nacional.
 
-\end{description}
+	\end{description}
 
-\subsection{Nomenclatura para identificadores}
+\subsection{Nomenclatura para identificadores}\label{ssec:nomenclatura}
 
 Otras abreviaciones y claves que se usan en el presente documento tienen la finalidad de identificar los elementos presentados. Las claves utilizadas son generalmente seguidas de un número. Las X’s que se muestran en la presente lista se usan para indicar que la abreviación es acompañada por un número.
 
 \begin{description}
 	
-	%\BRterm{nom:cuaX}{CU:} Caso de uso. Se utiliza para nombrar los casos de uso que pertenecen a este subsistema, así cada caso de uso se identifica por las letras ``CU'' más una cadena que hace referencia al subsistema al que pertenece, por ejemplo CUA refiere a un caso de uso de ``Administración'', CUE refiere a uno de ``Eventos''.
-	
 	%%%% Casos de uso %%%%
-	\BRterm{nom:curX}{CUPAX:} Casos de uso del módulo ``Admisión''. Se utiliza para nombrar los casos de uso que pertenecen a este módulo, así cada caso de uso se identifica por las letras ``CUPA'' seguido por el número de caso de uso ``X''. Por ejemplo: CUPA1.
-
-
+	\BRterm{nom:cuaX}{CU:} Caso de uso. Se utiliza para nombrar los casos de uso que pertenecen a este subsistema, así cada caso de uso se identifica por las letras ``CU'' más una cadena que hace referencia al subsistema al que pertenece, por ejemplo CUCP refiere a un caso de uso de ``Consulta de Profesores'', CUH refiere a uno de ``Horarios''.
+	
 	%%%% Pantalla %%%%
-	\BRterm{nom:iurX}{IUX.Y-Z:} Interfaz del caso de uso del módulo de ``Admisioń''. Se utiliza para describir las pantallas que acompañan los casos de uso correspondientes al proceso, se identifica por las letras ``IU'' más el número del proceso``X'', después se coloca el número del subproceso ``Y'' y finalmente se escribe el número del caso de uso ``Z'' . Por ejemplo: IU1.1-1.
+	\BRterm{nom:iurX}{IUX.Y-Z:} Se utiliza para describir las pantallas que acompañan los casos de uso correspondientes al proceso, se identifica por las letras ``IU'' más el número del proceso``X'', después se coloca el número del subproceso ``Y'' y finalmente se escribe el número del caso de uso ``Z'' . Por ejemplo: IU1.1-1.
 
-	%%%% MENSAJES %%%%
+	%%%% Mensajes %%%%
 	\BRterm{nom:msgx}{MSGX:} Mensaje. Se utiliza para nombrar los mensajes utilizados en el sistema para informar errores o notificar operaciones, identificados por las letras ``MSG'' seguido por el número de mensaje ``X''. Por ejemplo: MSG1.
 	
-	%%%% REGLAS DE NEGOCIO %%%%
+	%%%% Reglas de Negocio %%%%
 	\BRterm{nom:rnNx}{RN-NX:} Regla de Negocio. Se utiliza para nombrar a las reglas de negocio identificadas, así cada regla de negocio se identifica con las letras ``RN-N'' seguida del número de regla de negocio ``X''. Por ejemplo: RN-N1.
 	
-	\BRterm{nom:rnSx}{RN-SX:} Regla de Negocio del sistema. Se utiliza para nombrar a las reglas de negocio identificadas, así cada regla de negocio se identifica con las letras ``RN-S'' seguida del número de regla de negocio ``X''. Por ejemplo: RN-S1.		
+	%%%% Reglas de Negocio del Sistema %%%%
+	\BRterm{nom:rnSx}{RN-SX:} Regla de Negocio del sistema. Se utiliza para nombrar a las reglas de negocio identificadas, así cada regla de negocio se identifica con las letras ``RN-S'' seguida del número de regla de negocio ``X''. Por ejemplo: RN-S1.	
+		
 \end{description}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
