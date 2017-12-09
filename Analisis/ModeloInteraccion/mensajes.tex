@@ -24,8 +24,6 @@
 	\item[Ejemplo:] El aspirante Adriana Suárez Cruz se registró exitosamente.
 
 	\item[Referenciado por:] 
-		\cdtIdRef{CUPA1.1-2}{Gestionar actividades del ciclo escolar},
-		\cdtIdRef{CUPA1.1-3}{Editar ciclo escolar},
 \end{mensaje}
 
 %============================== MSG2 =================================
@@ -34,8 +32,7 @@
 	\item[Estatus:] Terminado
 	\item[Objetivo:] Preguntar al actor si desea cancelar esta operación.
 	\item[Redacción:] ¿Está seguro que desea cancelar la operación?
-	\item[Referenciado por:] \cdtIdRef{CUPA1.1-3}{Editar ciclo}, \cdtIdRef{CUPA1.1-4}{Registrar ciclo escolar}, \cdtIdRef{CUPA1.3-2}{Crear cuenta}, 
-	\cdtIdRef{CUPA1.9-1}{Configurar lista de aspirantes}.
+	\item[Referenciado por:] 
 \end{mensaje}
 
 %============================== MSG3 =================================
@@ -55,8 +52,6 @@
 	\end{itemize}
 	\item[Ejemplo:] No se ha podido realizar el registro. Vuelva a intentarlo.
 	\item[Referenciado por:] 
-		\cdtIdRef{CUGA7.1-2}{Registrar grupo},
-		\cdtIdRef{CUPA1.1-3}{Editar ciclo escolar},
 \end{mensaje}
 
 
@@ -72,34 +67,5 @@
 			\item DESTINATARIO: Es el destinatario del correo electrónico.
 		\end{itemize}
 	\item[Ejemplo:] Los correos electrónicos de notificación de entrevista han sido enviados a los aspirantes seleccionados.
-	\item[Referenciado por:] \cdtIdRef{CUPA1.8.1-1}{Generar lista de aspirantes para entrevistar},
-	\cdtIdRef{CUPA1.6-3}{Visualizar aspirantes con pre-registro sin encuesta}.
-\end{mensaje}
-
-%============================== MSG5 =================================
-\begin{mensaje}{MSG5}{Fecha condicionada a un período}{Error}
-	\item[Ubicación:] \msjEmergente, \msjCampo, \msjSuperior
-	\item[Estatus:] Terminado
-	\item[Objetivo:] Notificar al actor que la fecha de una operación está fuera del período permitido.
-	\item[Redacción:] La fecha de ACTIVIDAD está CONDICIÓN del periodo PREPOSICIÓN PERÍODO.
-	\item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
-	\begin{itemize}
-		\item ACTIVIDAD: Es la acción cuya fecha no cumple con la condición del período.
-		\item CONDICIÓN: Es la condición que debe satisfacer la fecha de la actividad.
-		\item PERÍODO: Es el intervalo de tiempo definido previamente con formato día, mes y año.
-		\item PREPOSICIÓN: Es la preposición que puede ser utilizada en la oración y puede tener los siguientes valores: de y por.
-	\end{itemize}
-	\item[Ejemplo:] A continuación se muestran algunos ejemplos: 
-	\begin{enumerate}
-		\item La fecha de alguna actividad está fuera del periodo del ciclo escolar.
-		\item La fecha de solicitud está fuera del periodo de registro.
-		\item La fecha de reserva está fuera del periodo para configurar citas de psicométrico.
-		\item La fecha de aplicación de entrevistas está fuera del periodo del ciclo escolar.
-		\item La fecha de solicitud está fuera del periodo de registro CENEVAL.
-	
-\end{enumerate}
-	
 	\item[Referenciado por:] 
-		\cdtIdRef{CUPA1.1-2}{Gestionar actividades del ciclo escolar}, \cdtIdRef{CUPA1.1-9}{Agregar actividad al ciclo escolar},
-		\cdtIdRef{CUPA1.4}{Registrar Aspirante}, 
 \end{mensaje}
