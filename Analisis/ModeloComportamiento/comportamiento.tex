@@ -1,3 +1,4 @@
+% !TEX root = ../analisis.tex
 
 %=========================================================
 \section{Módulos del sistema}
@@ -27,7 +28,7 @@
 %=========================================================
 \section{Actores del sistema}\label{sec:Comportamiento:ActoresSistema}
 
-Los actores son los perfiles asociados a las diversas personas que intervienen en la aplicación. Se han identificado los actores de acuerdo a las actividades y responsabilidades que obtienen al ser usuarios de la aplicación, los cuales se muestran en la figura \ref{fig:perfilesPAEAR} y se describen a continuación.
+Los actores son los perfiles asociados a las diversas personas que intervienen en la aplicación. Se han identificado los actores de acuerdo a las actividades y responsabilidades que obtienen al ser usuarios de la aplicación, los cuales se muestran y se describen a continuación.
 
     \begin{figure}[h!]
       \begin{center}
@@ -39,7 +40,7 @@ Los actores son los perfiles asociados a las diversas personas que intervienen e
 
 %ADMINISTRADOR
     \cdtLabel{Actor:Administrador}{}
-    \begin{actor}{Administrador}{-----}
+    \begin{actor}{Administrador}{}{Persona que podrá gestionar la información de la ESCOMapp, es decir tendrá permisos para modificar la información de los profesores, así como los catálogos de las ubicaciones de edificios, salones, cubículos, etc. para que los alumnos puedan registrar la ubicación de sus salones, así como agregar una ubicación a los profesores.}
 
 	\item[Área:] Persona que puede se interna o externa a la ESCOM.
 
@@ -49,59 +50,62 @@ Los actores son los perfiles asociados a las diversas personas que intervienen e
 		    \item Poblar la BD, con información pública de los profesores.
 		    \item Validar en su mayor parte posible la veracidad de la información que se registre.
 		 \end{itemize}
+		 
 	\item[Perfil:] \hspace{1pt}
 		\begin{itemize}
 		    \item Persona con conocimientos en BD.
 		    \item Persona con conocimientos en el manejo de la App.
 	    \end{itemize}
+	    
 	\item[Cantidad:] Uno.
 \end{actor}
 
 
 %PROFESOR
 \cdtLabel{Actor:Profesor}{}
-\begin{actor}{Profesor}{-----}
-	
+\begin{actor}{Profesor}{}{Persona asignada a una Unidad de Aprendizaje en el Instituto para impartir cátedra a quienes los alumnos podrán visualizar la información para poder realizar consultas u otras actividades extra-curriculares.}
+
 	\item[Área:] Profesor-Docente-Administrativo.
 	
 	\item[Responsabilidades:] \hspace{1pt}
+	
 	    \begin{itemize}
 	    	\item Creación y manejo de cuenta personal.
 	    	\item Mantener su información pública y no pública actualizada.
 	    	\item Dar privilegios a la información no publica.
 	    \end{itemize}
-	\item[Perfil:] \hspace{1pt}
-	\begin{itemize}
-		\item Maestro en su área de conocimiento.
-	\end{itemize}
+	    
+	\item[Perfil:] Maestro en su área de conocimiento.
+	
 	\item[Cantidad:] No se define.
+	
 \end{actor}
 
 
 %ALUMNO
 \cdtLabel{Actor:Alumno}{}
-\begin{actor}{Alumno}{-----}
+\begin{actor}{Alumno}{-----}{Persona que posee un número de boleta que se identifica como Alumno de la Institución quien podrá registrar su horario en la aplicación y gestionar la ubicación donde se imparten las Unidades de Aprendizaje en las que esta inscrito.}
 	
 	\item[Área:] Secretaría de Administración - Control Escolar.
 	
 	\item[Responsabilidades:] \hspace{1pt}
+	
 	\begin{itemize}
 		\item Creación y manejo de cuenta personal.
 		\item Manejo de la información sobre los profesores y Horarios.
-		
 	\end{itemize}
-	\item[Perfil:] \hspace{1pt}
-	\begin{itemize}
-		\item Alumno de la ESCOM.
-	\end{itemize}
+	
+	\item[Perfil:] Alumno de la ESCOM.
+
 	\item[Cantidad:] No se define.
+	
 \end{actor}
 
 
 
 %INVITADO
 \cdtLabel{Actor:Invitado}{}
-\begin{actor}{Invitado}{-----}
+\begin{actor}{Invitado}{-----}{Persona externa al Instituto que podrá consultar la información publica de los Docentes.}
 	
 	\item[Área:] No se define.
 	
@@ -111,11 +115,9 @@ Los actores son los perfiles asociados a las diversas personas que intervienen e
 		\item Creación y manejo de cuenta personal.
 		\item Manejo de la información sobre los profesores y Horarios.
 	\end{itemize}
-	\item[Perfil:] \hspace{1pt}
-	\begin{itemize}
-		\item No se define.
-	\end{itemize}
-		\item No se define.
+	
+	\item[Perfil:] No se define.
+	
 \end{actor}
 
 
