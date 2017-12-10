@@ -11,7 +11,7 @@
 
 %===========================  MSG1 ==================================
 \begin{mensaje}{MSG1}{Operación exitosa}{Notificación}
-	\item[Ubicación:] \msjSuperior
+	\item[Ubicación:] \msjEmergente
 	\item[Estatus:] Terminado
 	\item[Objetivo:] Notificar al actor que la acción solicitada fue realizada exitosamente.
 	\item[Redacción:] DETERMINADO ENTIDAD VALOR se OPERACIÓN exitosamente.
@@ -37,7 +37,7 @@
 
 %============================== MSG3 =================================
 \begin{mensaje}{MSG3}{Operación fallida}{Notificación}
-	\item[Ubicación:] \msjSuperior, \msjEmergente
+	\item[Ubicación:] \msjEmergente
 	\item[Estatus:] Terminado
 	\item[Objetivo:] Notificar al actor que una operación no se pudo llevar a cabo.
 	\item[Redacción:] A continuación se listan las posibles redacciones que este mensaje puede tener dependiendo de lo especificado en el diccionario de datos:
@@ -56,16 +56,19 @@
 
 
 %============================== MSG4 =================================
-\begin{mensaje}{MSG4}{Correos electrónicos enviados}{Notificación}
-	\item[Ubicación:] \msjSuperior
+\begin{mensaje}{MSG4}{Elemento no encontrado}{Notificación}
+	\item[Ubicación:] \msjEmergente
 	\item[Estatus:] Terminado
-	\item[Objetivo:] Notificar al actor que se han enviado correos electrónicos.
-	\item[Redacción:] Los correos electrónicos de ASUNTO han sido enviados a DESTINATARIO.
-	\item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
-		\begin{itemize}
-			\item ASUNTO: Es el motivo del envío del correo electrónico.
-			\item DESTINATARIO: Es el destinatario del correo electrónico.
-		\end{itemize}
-	\item[Ejemplo:] Los correos electrónicos de notificación de entrevista han sido enviados a los aspirantes seleccionados.
-	\item[Referenciado por:] 
+	\item[Objetivo:] Notificar al actor que no existen elementos.
+	\item[Redacción:] No existen profesores con ese nombre, intente nuevamente.
+	\item[Referenciado por:] \cdtIdRef{CUCP1}{Buscar profesor}
+\end{mensaje}
+
+%============================== MSG4 =================================
+\begin{mensaje}{MSG5}{No existen elementos registrados}{Notificación}
+	\item[Ubicación:] \msjEmergente
+	\item[Estatus:] Terminado
+	\item[Objetivo:] Notificar al actor que no existen elementos.
+	\item[Redacción:] No existen profesores registrados, ponerse en contacto con soporte.
+	\item[Referenciado por:] \cdtIdRef{CUCP1}{Buscar profesor}
 \end{mensaje}
