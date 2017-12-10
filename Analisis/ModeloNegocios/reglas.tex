@@ -75,66 +75,31 @@
 
 %------------------------------------------------------------------------------------------------------------------
 
-\begin{BusinessRule}{RN-N4}{Periodo válido}
-%se cambió el nombre de la regla de negocio
+\begin{BusinessRule}{RN-N1}{Selección de Grupo}
 	{Derivación}
 	{Controla la operación}
 	\BRitem{Versión}{1.0}
 	\BRitem{Autor}{Eduardo Espino Maldonado}
 	\BRitem{Estatus}{Edición}
 	\item[Descripción:] 
-	Para el registro de actividades en las cuales contengan actividades contenidas en un periodo, se debe cumplir lo siguiente.
 	
-	Un periodo definido tiene:\\
-	\begin{center}
-        $P_d = [f_{ini},f_{fin}] $ \\	
-	\end{center}
-
-	en donde:\\
-	\begin{itemize}
-	    \item $f_{ini}$: Fecha de inicio del periodo
-	    \item $f_{fin}$: Fecha de término del periodo
-	\end{itemize}
+	Para la conformación de un grupo de una Unidad de Aprendizaje se conformara por:
 	
-	y se debe cumplir lo siguiente:
-
-	\begin{enumerate}
-	    \item $f_{ini} < f_{fin}$ \\
+	$$ <NIVEL> C <TURNO> <GRUPO> $$
 	
-		dadas las siguientes condiciones:
-		\begin{itemize}
-		    \item $f_{fin} \geq f_{ini}+60$
-		    \item $f_{fin} \leq f_{ini}+365$
-        \end{itemize}		
-		\item  Al establecer la fecha de inicio del ciclo escolar:
-		\begin{verbatim}fechaRegistroDeCiclo < fechaInicioDeCiclo\end{verbatim}
-		\item  Al establecer la fecha de publicación:
-		\begin{verbatim}fechaInicioDeCiclo >= fechaPublicacion\end{verbatim}
-		
-	\end{enumerate}
-	%La duración mínima de un ciclo es de 60 días y máxima de 365 días
+	en donde: \\
+	
+	\begin{UClist}
+    
+    	\UCli {\bf NIVEL:} El \cdtRef{unidadaprendizaje:nivel}{Nivel} seleccionado.
+	
+    	\UCli {\bf TURNO:} El \textbf{Turno} seleccionado.
+	
+	\UCli {\bf GRUPO:} El \textbf{Grupo} seleccionado.
+	    	    
+  	\end{UClist}
 
-	\BRitem{Referenciado por}{\cdtIdRef{CUPA1.1-3}{Editar ciclo escolar}, \cdtIdRef{CUPA1.1-4}{Registrar ciclo escolar}, \cdtIdRef{CUGA7.4-3.1}{Registrar ausencia temporal}, \cdtIdRef{CUGA7.4-3.2}{Editar ausencia temporal}.}
+	\BRitem{Referenciado por}{
+		\cdtIdRef{CUH1.1}{Registrar Materia}
+		}
 \end{BusinessRule}
-
-\begin{BusinessRule}{RN-N5}{Cálculo de la lista de calificaciones de los aspirantes}
-	{Derivación}
-	%Se cambió el nombre a la regla de negocio y se escribió mas detallada
-	{Controla la operación}
-	\BRitem{Versión}{1.0}
-	\BRitem{Autor}{Eduardo Espino Maldonado}
-	\BRitem{Estatus}{Edición}
-	\item[Descripción:] 
-	La calificación para el ingreso a la ELD de cada aspirante, se calcula de la siguiente manera:
-	\[
-	PG=\sum_{i=1}^n CalC_{i}\cdot {C_{i}}
-	\]
-	En donde: 
-	\begin{itemize}
-		\item $CalC_{i}$: Calificación obtenida por el aspirante para el criterio $i$
-		\item $C_i$ = Ponderación del criterio $i$
-		\item $n$: Número de criterios asociados a la convocatoria de ingreso
-	\end{itemize}
-	\BRitem{Referenciado por}{\cdtIdRef{CUPA1.8.1-1}{Generar lista de aspirantes para entrevistar}, \cdtIdRef{CUPA1.9-1}{Configurar lista de aspirantes}, \cdtIdRef{CUPA1.9-2}{Agregar aspirantes a la lista de aceptados},}
-\end{BusinessRule}
-
