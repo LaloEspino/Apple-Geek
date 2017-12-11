@@ -1,3 +1,4 @@
+% !TEX root = analisis.tex
 \section{Objetivo del documento}\label{sec:objetivo}
 
 El proyecto tiene como propósito desarrollar una aplicación donde los alumnos de la \textbf{Escuela Superior de Cómputo}\footnote{En adelante ESCOM} puedan visualizar la información personal de los docentes, así como los horarios y cubículos asignados a ellos en el transcurso del semestre.\\
@@ -24,7 +25,7 @@ El contenido del documento se encuentra estructurado de la siguiente forma:\\
 	
 	\item El capítulo \ref{chp:CProfesores} describe los casos de uso que conforman el módulo: Consulta de Profesores.
 	
-	\item El capítulo \ref{chp:Horarios} describe los casos de uso que conforman el módulo: Horarios.
+	\item El capítulo \ref{horariosAmigo} describe los casos de uso que conforman el módulo: Horarios.
 	
 	\item El capítulo \ref{chp:modeloInteraccionUsuario} describe el modelo de interacción con el usuario.
 	
@@ -53,7 +54,7 @@ Otras abreviaciones y claves que se usan en el presente documento tienen la fina
 \begin{description}
 	
 	%%%% Casos de uso %%%%
-	\BRterm{nom:cuaX}{CU:} Caso de uso. Se utiliza para nombrar los casos de uso que pertenecen a este subsistema, así cada caso de uso se identifica por las letras ``CU'' más una cadena que hace referencia al subsistema al que pertenece, por ejemplo CUCP refiere a un caso de uso de ``Consulta de Profesores'', CUH refiere a uno de ``Horarios''.
+	\BRterm{nom:cuaX}{CU:} Caso de uso. Se utiliza para nombrar los casos de uso que pertenecen a este subsistema, así cada caso de uso se identifica por las letras ``CU'' más una cadena que hace referencia al subsistema al que pertenece, por ejemplo \textbf{CU-CP} refiere a un caso de uso de ``Consulta de Profesores'', \textbf{CU-H} refiere a uno de ``Horarios''.
 	
 	%%%% Pantalla %%%%
 	\BRterm{nom:iurX}{IUX.Y-Z:} Se utiliza para describir las pantallas que acompañan los casos de uso correspondientes al proceso, se identifica por las letras ``IU'' más el número del proceso``X'', después se coloca el número del subproceso ``Y'' y finalmente se escribe el número del caso de uso ``Z'' . Por ejemplo: IU1.1-1.
