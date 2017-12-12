@@ -1,7 +1,7 @@
 
 \begin{UseCase}{CUCP1.1}{Visualizar información}
     {
-    
+    Para que un \cdtRef{Actor:alumno}{Alumno}, \cdtRef{Actor:profesor}{Profesor} o  \cdtRef{Actor:invitado}{Invitado} pueda localizar a un profesor, es necesario que conozca la información a detalle del mismo, esto se logra gracias a la operación visualizar, dicha acción le permite conocer la información publica del profesor.
     
 }
     
@@ -39,108 +39,69 @@
     	%para qué: para que CENEVAL asigne los folios a los aspirantes y puedan presentar el examen 
     	%por qué: porque desea realizar el prerregistro de aspirantes
 		\UCccitem{Observaciones}{
-		\begin{UClist}
-			% 			% PC: Petición de Cambio, describa el trabajo a realizar, si es posible indique la causa de la PC. Opcionalmente especifique la fecha en que considera razonable que se deba terminar la PC. No olvide que la numeración no se debe reiniciar en una segunda o tercera revisión.
-			\RCitem{PC1}{\TOCHK{Paso 1: Este caso de uso viene de un botón que aparece en la pantalla de Evaluaciones del aspirante}}{18 de Octubre del 2017}
-			\RCitem{PC2}{\TOCHK{No entiendo la trayectoria A}}{18 de Octubre del 2017}
-			\RCitem{PC3}{\TOCHK{Paso 2: qué pasa si el estado del aspirante es registrado?}}{18 de Octubre del 2017}
-			\RCitem{PC4}{v{Paso 7: Referenciar máquina de estados}}{18 de Octubre del 2017}
-			\RCitem{PC5}{\TOCHK{Entre paso 8 y 9: Escribir que el aspirante responde la encuesta de ceneval}}{18 de Octubre del 2017}
-			\RCitem{PC6}{\TOCHK{Paso 9: Link de trayectoria B roto}}{18 de Octubre del 2017}
-			\RCitem{PC7}{\TOCHK{Paso 12: No muestra esa pantalla}}{18 de Octubre del 2017}
-			
-		\end{UClist}		
+	
 	}
     \UCsection{Atributos}
     \UCitem{Actor(es)}{
     	\cdtRef{Actor:alumno}{Alumno}, \cdtRef{Actor:profesor}{Profesor},  \cdtRef{Actor:invitado}{Invitado}.
     }
-    \UCitem{Propósito}{Obtener la información de un profesor}
+    \UCitem{Propósito}{Visualizar información.}
     \UCitem{Entradas}{
 	\begin{UClist}
-		\UCli 
+		\UCli  \cdtRef{persona:nombre}{Nombre}, \cdtRef{persona:primerApellido}{Primer apellido}, \cdtRef{persona:segundoApellido}{Segundo apellido}. \ioObtener. Esta información se registro en la base de datos.
+		\UCli \cdtRef{persona:nombre}{Nombre}. \ioEscribir.
+		\UCli  \cdtRef{horario:dia}{Horario}. \ioObtener.
+		\UCli  \cdtRef{contacto:telefono}{Teléfono}. \ioObtener.
+		\UCli  \cdtRef{contacto:telefono}{Correo Electrónico}. \ioObtener.
 	\end{UClist}
 	}
     \UCitem{Salidas}{
     \begin{UClist}
-    	\UCli Petición \textbf{POST} que contiene la siguiente información del aspirante:
-    	\UCli \cdtRef{Persona:folioELD}{Matrícula}: \ioObtener
-    	\UCli \cdtRef{Persona:nombre}{Nombre}: \ioObtener
-    	\UCli \cdtRef{Persona:primerApellido}{Primer Apellido}: \ioObtener
-    	\UCli \cdtRef{Persona:segundoApellido}{Segundo Apellido}: \ioObtener
-    	\UCli Fecha de nacimiento: \ioCalcular
-    	\UCli Código: \ioCalcular
+    	\UCli  \cdtRef{persona:nombre}{Nombre}, \cdtRef{persona:primerApellido}{Primer apellido}, \cdtRef{persona:segundoApellido}{Segundo apellido}. \ioObtener. Esta información se registro en la base de datos.
+    	\UCli \cdtRef{persona:nombre}{Nombre}. \ioEscribir.
+    	\UCli  \cdtRef{horario:dia}{Horario}. \ioObtener.
+    	\UCli  \cdtRef{contacto:telefono}{Teléfono}. \ioObtener.
+    	\UCli  \cdtRef{contacto:telefono}{Correo Electrónico}. \ioObtener.
     \end{UClist}
 }
     \UCitem{Precondiciones}{
 	\begin{UClist}
-	    \UCli {\bf Interna:} Que el aspirante se encuentre en estado \textbf{Evaluaciones} como lo indica la regla de negocio \cdtIdRef{RN-N12}{Ciclo de vida del aspirante}.
-	     \UCli {\bf Interna:} Que el criterio evaluación de conocimientos se encuentre en estado \textbf{Notificación} como lo indica la regla de negocio 
-	    \UCli {\bf Interna:} Que el Id de sede haya sido registrado previamente.
+	    \UCli {\bf Interna:} Que la información del profesor se encuentre registrada en la BD
 	\end{UClist}
     }
     
     \UCitem{Postcondiciones}{
-	\begin{UClist}
-	    \UCli {\bf Interna:} El estado del aspirante cambiara a \textbf{Pre-registrado} como lo indica la regla de negocio \cdtIdRef{RN-N50}{Ciclo de vida de registro con el CENEVAL}.
-	    \UCli {\bf Interna:} El sistema enviará la información del aspirante al CENEVAL como lo indica la regla de negocio \cdtIdRef{RN-N57}{Información enviada al CENEVAL}.
-	    
-	\end{UClist}
+	Ninguno
     }
 
     %Reglas de negocio: Especifique las reglas de negocio que utiliza este caso de uso
     \UCitem{Reglas de negocio}{
-    	\begin{UClist}
-    		\UCli \cdtIdRef{RN-N12}{Ciclo de vida del aspirante}: Verifica que el aspirante se encuentre en estado \textbf{Evaluaciones}.
-    		\UCli \cdtIdRef{RN-N50}{Ciclo de vida de registro con el CENEVAL}: Verifica que el estado del aspirante sea diferente a \textbf{Registrado}.
-%    		\UCli \cdtIdRef{RN-N57}{Información enviada al CENEVAL}: Describe la información del aspirante que se enviará al CENEVAL.
-%    		\UCli \cdtIdRef{RN-N68}{Ciclo de vida de CENEVAL}: Verifica que el estado de la evaluación de conocimientos sea \textbf{Notificació}.
-    	\end{UClist}
+    	Ninguno
     }
     \UCitem{Errores}{
     Ninguno.
     
   
     }
-    \UCitem{Tipo}{Secundario, extiende del caso de uso \cdtIdRef{IU1.5-1C}{Evaluaciones}}
+    \UCitem{Tipo}{Secundario, extiende del caso de uso \cdtIdRef{CUCP1}{Buscar profesor}}
 \end{UseCase}
 
  \begin{UCtrayectoria}
-%    \UCpaso[\UCactor] Ingresa al sistema después de realizar el pago de derechos para evaluaciones.
-%    \UCpaso[\UCsist] Verifica que el aspirante no se encuentre en estado \textbf{Registrado} como lo indica la regla de negocio \cdtIdRef{RN-N50}{Ciclo de vida de registro con el CENEVAL}. \refTray{A}
- % \UCpaso[\UCsist] Muestra la pantalla  \cdtIdRef{IU1.6-1}{IU1.6-1 Manual de Registro en CENEVAL}.
-    \UCpaso[\UCactor] Oprime el botón \cdtButton{CENEVAL} en la pantalla \cdtIdRef{IU1.5-1C}{Evaluaciones}.
+
+    \UCpaso[\UCactor] Presiona el nombre de un profesor en la pantalla \cdtIdRef{IUCP1}{Realizar Busqueda}.
+    \UCpaso[\UCsist]  Obtiene el nombre del profesor.
+    \UCpaso[\UCsist] Obtiene la ubicación del profesor.
+    \UCpaso[\UCsist] Obtiene el horario del profesor.
+    \UCpaso[\UCsist]Obtiene el correo electrónico del profesor.
+    \UCpaso[\UCsist]  Obtiene el teléfono del profesor.
+    \UCpaso[\UCsist] Construye la pantalla \cdtIdRef{IUCP1-1 }{Visualizar información}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IUCP1-1 }{Visualizar información}.
+    \UCpaso[\UCactor] Visualiza la información del profesor.
     
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU1.6-1}{Manual de Registro en CENEVAL}.
-    \UCpaso[\UCactor] Selecciona la casilla He leído y entiendo el procedimiento que debo seguir.
-   
-    \UCpaso[\UCsist] Cambia el estado del aspirante a \textbf{Notificado} como lo indica la regla de negocio \cdtIdRef{RN-N50}{Ciclo de vida de registro con el CENEVAL}.
-    \UCpaso[\UCactor] Oprime el botón \cdtButton{Ir al registro}. 
-	
-	\UCpaso[\UCsist] Obtiene la información del aspirante solicitada por el CENEVAL como lo indica la regla de negocio \cdtIdRef{RN-N57}{Información enviada al CENEVAL}.
-	\UCpaso[\UCsist] Obtiene la información de la ELD como lo indica la regla de negocio \cdtIdRef{RN-N57}{Información enviada al CENEVAL}.
-	
-    \UCpaso[\UCsist] Calcula la fecha de nacimiento del aspirante con base en su \cdtRef{Persona:curp}{CURP}.
-    \UCpaso[\UCsist] Calcula el código del aspirante con la información obtenida como lo indica la regla de negocio \cdtIdRef{RN-N57}{Información enviada al CENEVAL}.
-    
-    \UCpaso[\UCsist] Genera la petición POST con la información obtenida del aspirante y de la ELD.
-    \UCpaso[\UCsist] Envía la petición POST al CENEVAL mediante el método \textbf{POST} como lo indica la regla de negocio \cdtIdRef{RN-N57}{Información enviada al CENEVAL}.
-    \UCpaso[\UCsist] Dirige al aspirante al sitio web de CENEVAL.
-    \UCpaso[\UCactor] Proporciona la información solicitada por el CENEVAL en su sitio web.
-    \UCpaso[\UCsist] Recibe la petición POST del sistema CENEVAL con la información del aspirante. \refTray{A} 
-    \UCpaso[\UCsist] Almacena la información recibida del aspirante.
-    \UCpaso[\UCsist] Cambia el estado del aspirante a \textbf{Registrado} como o indica la regla de negocio \cdtIdRef{RN-N50}{Ciclo de vida de registro con el CENEVAL}.
     
     
 
 \end{UCtrayectoria}
 
-
-
-
-%-------------------------Trayectoria A------------------------------
-\begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El aspirante no ha concluido la encuesta en el sitio web del CENEVAL.}
-
-\end{UCtrayectoriaA}
 
 
