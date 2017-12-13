@@ -98,13 +98,13 @@
 % Comando: \DRAFT{fecha}
 % Propósito: Indicar que el documento es una versión en borrador
 %=====================================================
-\newcommand{\DRAFT}[1]{ {\small\color{red}Borrador {\em #1}}}%
+%\newcommand{\DRAFT}[1]{ {\small\color{red}Borrador {\em #1}}}%
 
 %=====================================================
 % Comando: \RELEASE{numero}
 % Propósito: Indicar que el documento ha sido liberado y el número de la versión.
 %=====================================================
-\newcommand{\RELEASE}[1]{ {\small Versión #1}}%
+%\newcommand{\RELEASE}[1]{ {\small Versión #1}}%
 
 
 %=====================================================
@@ -137,8 +137,11 @@
 			%
 		}
 		%\rule{\textwidth}{1mm}%
-		\color{colorSecundario}\fbox{\color{colorPrincipal}%
-		\small \varCveProyecto--\varCveSistema--\varCveDocumento\varCveEntregable \varDocVersion
+		\color{white}
+%		\color{colorSecundario}
+		\fbox{\color{white}%
+%		\fbox{\color{colorPrincipal}%
+%		\small \varCveProyecto--\varCveSistema--\varCveDocumento\varCveEntregable \varDocVersion
 		}
 	}%
 }
