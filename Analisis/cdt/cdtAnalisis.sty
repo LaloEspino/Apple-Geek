@@ -500,3 +500,15 @@
 \newcommand{\msjPantalla}{Se muestra en la pantalla}
 \newcommand{\msjPDF}{PDF}
 \newcommand{\msjPop}{Pop bloqueante}
+
+%--------------------------------------- Errores --------------------------------------
+%% Definir Error
+\newcommand{\UCerr}[3]{
+	\textbf{Error #1:} \hypertarget{\arabic{counterUC}:err#1} #2 #3
+}
+
+%% Referenciar Error
+\newcommand{\refErr}[1]{%
+	%
+	\hyperlink{\arabic{counterUC}:err#1}{ $[$Error  #1$]$}%
+}

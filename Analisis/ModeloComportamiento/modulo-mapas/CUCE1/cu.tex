@@ -1,0 +1,79 @@
+\begin{UseCase}{CUCE1}{Consultar mapa}{
+		
+		Permite visualizar un modelado en 2D de la vista aérea de la  \cdtRef{gls:escom}{Escuela Superior de Cómputo} y de esta manera poder encontrar alguna ubicación dentro de la Unidad Académica.
+		
+	}
+	
+	\UCitem{Versión}{1.0}
+	\UCccsection{Administración de Requerimientos}
+	\UCitem{Autor}{Alberto García Paul}
+	\UCccitem{Evaluador}{}
+	\UCitem{Operación}{Consultar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Baja}
+	\UCccitem{Volatilidad}{Baja}
+	\UCccitem{Madurez}{Alta}
+	\UCitem{Estatus}{En Desarrollo}
+	\UCitem{Fecha del último estatus}{12 de Diciembre del 2017}
+	
+	% 	\UCccsection{Revisión Versión 1.0} 
+	% 	\UCccitem{Fecha}{} 
+	% 	\UCccitem{Evaluador}{}
+	% 	\UCccitem{Resultado}{}
+	%	\UCccitem{Observaciones}{\begin{UClist}
+	%		\RCitem{PC1}{\TODO{}}{fecha}
+	%	\end{UClist}}
+	
+	\UCsection{Atributos}
+	
+	\UCitem{Actor(es)}{
+		\begin{UClist}
+			\UCli \cdtRef{Actor:Alumno}{Alumno}
+			\UCli \cdtRef{Actor:Profesor}{Profesor}
+			\UCli \cdtRef{Actor:Invitado}{Invitado}
+		\end{UClist}
+		}
+	
+	\UCitem{Propósito}{Proporcionar una herramienta que permita consultar los espacios con los que cuenta la Escuela Superior de Cómputo.}
+	
+	\UCitem{Entradas}{Ninguna}
+	
+	\UCitem{Salidas}{Modelo en 2D de la vista aérea de la Escuela Superior de Cómputo}
+	
+	\UCitem{Precondiciones}{\textbf{Interna:} Debe existir la imagen que contiene el modelo en 2D de la vista aérea de la Escuela Superior de Cómputo.}
+	
+	\UCitem{Postcondiciones}{{\bf Interna:} Se mostrará una representación de la Escuela Superior de Computo en 2D.}
+	
+	\UCitem{Reglas de negocio}{Ninguna}
+	
+	\UCitem{Errores}{\UCerr{Uno}{Cuando no existe información en el sistema,}{se muestra el mensaje \cdtIdRef{MSG7}{No existe información en el sistema} y termina el caso de uso.}}
+	
+	\UCitem{Tipo}{Primario.}
+	
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	
+	\UCpaso[\UCactor] Solicita visualizar el mapa de la Escuela Superior de Cómputo dando tap en la sección \textbf{Mapa} del menú  \cdtIdRef{MN1}{Menú del alumno y profesor}.
+	
+	\UCpaso [\UCsist] \label{CUCE1:verifica} Verifica que exista la imagen en el sistema. \refErr{Uno}
+	
+	\UCpaso [\UCsist] \label{CUCE1:imagen} Obtiene la imagen que contiene el modelo en 2D de la vista aérea de la Escuela Superior de Cómputo
+	
+	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IUCE1}{Consultar mapa}.
+	
+	\UCpaso [\UCactor] Visualiza la imagen obtenida en el paso \ref{CUCE1:imagen} de la trayectoria principal. 
+	
+	\UCpaso [\UCactor] Navega a través de los pisos que tiene la Escuela Superior de Cómputo utilizando los botónes \btnArriba{} y \btnAbajo{}. \refTray{A}
+	
+	\UCpaso [\UCsist] Regresa al paso \ref{CUCE1:verifica} de la trayectoria principal.
+	
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{El actor requiere visualizar la información respecto al mapa.}
+	
+	\UCpaso [\UCactor] \label{CUCE1:informacion} Solicita consultar la información del mapa dando tap en el icono \btnInfo{} en la pantalla \cdtIdRef{IUCE1}{Consultar mapa}. 
+	
+\end{UCtrayectoriaA}
+
+\UCExtensionPoint{Se requiere consultar la información del mapa}{En el paso \ref{CUCE1:informacion} de la trayectora alterna \textbf{A}}{\cdtIdRef{CUCE1.1}{Consultar información}}
